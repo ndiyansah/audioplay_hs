@@ -12,3 +12,12 @@ export const MainWrapper = styled.div`
     min-height: calc(100vh - 60px);
 `
 
+export const Header = styled.div`
+    background: rgb(24, 24, 24);
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 11;
+`
