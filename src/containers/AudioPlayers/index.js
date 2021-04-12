@@ -1,8 +1,12 @@
 import React from "react";
-import styled from "styled-components";
+import { MainWrapper } from "../../theme/MainStyle/Wrapper";
 
 const AudioPlayers = () => {
-  return <h1>Hello World</h1>
+  return (
+    <MainWrapper>
+      <h1>Hello World</h1>
+    </MainWrapper>
+  );
 };
 
 export default AudioPlayers;
