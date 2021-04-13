@@ -3,7 +3,6 @@ import moment from "moment";
 
 import { Bar } from "../../theme/MainStyle/Audio";
 
-
 export default function BarAudio(props) {
   const { duration, curTime, onTimeUpdate } = props;
 

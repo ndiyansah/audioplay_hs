@@ -1,4 +1,4 @@
-import React from "react";
+import {useState} from "react";
 import {
   FONTS,
   FONTS_SIZE,
@@ -10,27 +10,28 @@ import { ListContainer, LeftWrapper } from "../../theme/MainStyle/ListView";
 const albumTextStyle = {
   fontSize: FONTS_SIZE.normal,
   fontWeight: FONT_WEIGHT.small,
-  color: "#B3B3B3",
+  color: COLORS.greyWhite,
   fontFamily: "Nunito Sans",
   marginTop: 0,
   marginBottom: "5px",
 };
 
 const trackTextStyle = {
-  color: COLORS.black,
-  fontWeight: FONT_WEIGHT.bold,
+  color: COLORS.greyWhite,
+  fontWeight: FONT_WEIGHT.medium,
   fontSize: FONTS_SIZE.medium,
   fontFamily: "Nunito Sans",
   margin: 0,
 };
 
 const ItunesList = ({ data }) => {
+
   return (
     <>
       {data.results &&
         !!data.results.length &&
         data.results.map((item, id) => (
-          <ListContainer>
+          <ListContainer >
             <LeftWrapper>
               <img
                 src={item.artworkUrl60 || ""}

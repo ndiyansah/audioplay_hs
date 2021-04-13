@@ -2,6 +2,7 @@ export const COLORS = {
   black: '#000000',
   white: '#fff',
   greyRegular: '#666666',
+  greyWhite: '#B3B3B3',
 }
 
 export const FONT_WEIGHT = {
@@ -38,6 +39,7 @@ export const FONTS = {
   infoFont: {
     fontSize: FONTS_SIZE.medium,
     fontWeight: FONT_WEIGHT.bold,
+    color: COLORS.white,
     fontFamily: 'Nunito Sans',
   },
   defaultFont: {
