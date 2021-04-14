@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const MainWrapper = styled.div`
-    background-color: white;
+    background-color: rgb(18, 18, 18);;
     position: relative;
     top: 60px;
     max-width: 480px;
@@ -13,7 +13,7 @@ export const MainWrapper = styled.div`
 `
 
 export const Header = styled.div`
-    background: rgb(24, 24, 24);
+    background: rgb(40, 40, 40);
     position: fixed;
     width: 100%;
     top: 0px;

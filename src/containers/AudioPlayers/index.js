@@ -1,47 +1,71 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
+
 import { MainWrapper, Header } from "../../theme/MainStyle/Wrapper";
+
+import { Sticky } from "../../theme/MainStyle/Sticky";
+import { API_URL } from "../../services/API_URL";
+
 import ItunesSearch from "../../components/ItunesSearch";
 import ItunesList from "../../components/ItunesList";
 
+import Audio from "./components/Audio";
+import ListView from "./components/ListView";
+
 const AudioPlayers = () => {
-  const [search, setSearch] = useState('')
+  const audio = useRef();
+
+  const [search, setSearch] = useState("");
   const [data, setData] = useState({ hits: [] });
 
   const fetchSearch = async () => {
-      const result = await axios(
-        `https://itunes.apple.com/search?term=${search}`
-      );
-      setData(result.data);
-    };
+    const result = await axios(`${API_URL}?term=${search}`);
+    setData(result.data);
+  };
+
+  const [source, setSource] = useState();
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios(
-        `https://itunes.apple.com/search?term=pamungkas`
-      );
+      const result = await axios(`${API_URL}?term=khalid`);
       setData(result.data);
     };
 
     fetchData();
   }, []);
 
-console.log(search)
+  const handleClickSong = (source) => {
+    setSource(source);
+    if (audio.current) {
+      audio.current.pause();
+      audio.current.load();
+      audio.current.play();
+    }
+  };
+
   return (
     <>
       <Header>
-        <ItunesSearch 
+        <ItunesSearch
           value={search}
           onChange={(val) => setSearch(val)}
           onSearch={() => {
-          fetchSearch({})
-        }}
-        placeholder="Artists and Songs"
+            fetchSearch({});
+          }}
+          placeholder="Artists and Songs"
         />
       </Header>
 
       <MainWrapper>
-        <ItunesList data={data} />
+        <ListView
+          data={data}
+          handleClickSong={handleClickSong}
+        />
+        {source && source !== null && (
+          <Sticky position="bottom">
+            <Audio ref={audio} src={source} />
+          </Sticky>
+        )}
       </MainWrapper>
     </>
   );
