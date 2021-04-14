@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, Fragment } from "react";
 import axios from "axios";
 
 import { MainWrapper, Header } from "../../theme/MainStyle/Wrapper";
@@ -7,7 +7,6 @@ import { Sticky } from "../../theme/MainStyle/Sticky";
 import { API_URL } from "../../services/API_URL";
 
 import ItunesSearch from "../../components/ItunesSearch";
-import ItunesList from "../../components/ItunesList";
 
 import Audio from "./components/Audio";
 import ListView from "./components/ListView";
@@ -44,7 +43,7 @@ const AudioPlayers = () => {
   };
 
   return (
-    <>
+    <Fragment>
       <Header>
         <ItunesSearch
           value={search}
@@ -67,7 +66,7 @@ const AudioPlayers = () => {
           </Sticky>
         )}
       </MainWrapper>
-    </>
+    </Fragment>
   );
 };
 

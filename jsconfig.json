@@ -1,0 +1,6 @@
+{
+    "name": "audioplay_hs",
+    "jest": {
+      "verbose": true
+    }
+}
