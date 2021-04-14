@@ -31,40 +31,10 @@ export const Bar = styled.div`
   }
 `;
 
-export const Player = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 0;
-  background-color: #212527;
-  .controls {
-    flex-grow: 1;
-    margin: 0 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-`;
 
 export const PlayButton = styled.button`
   width: fit-content;
   margin-bottom: 15px;
   background-color: transparent;
   border: none;
-
-  &:focus {
-    outline: none;
-  }
-  &:hover {
-    cursor: pointer;
-    svg {
-      color: greenyellow;
-    }
-  }
-
-  svg {
-    font-size: 4em;
-    color: white;
-  }
 `;

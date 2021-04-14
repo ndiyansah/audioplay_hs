@@ -13,7 +13,7 @@ const BaseSticky = styled.div`
   transition: all 0.35s ease 0s;
   text-decoration: none;
   width: 100%;
-  max-width: 480px;
+  max-width: 460px;
   position: fixed;
   left: 50%;
   transform: translate(-50%);
@@ -22,7 +22,7 @@ const BaseSticky = styled.div`
   font-size: 1em;
   border-top-style: solid;
   margin: 0px;
-  background-color: rgb(255, 255, 255);
+  background-color: #212527;
   box-shadow: ${(p) => (p.shadow ? "0px 0 10px rgba(0, 0, 0, 0.2)" : "")};
 `;
 
