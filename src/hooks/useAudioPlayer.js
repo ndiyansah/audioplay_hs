@@ -15,10 +15,13 @@ function useAudioPlayer() {
     };
     const setAudioTime = () => setCurTime(audio.currentTime);
 
-    audio.addEventListener("loadeddata", setAudioData);
-
-    audio.addEventListener("timeupdate", setAudioTime);
-
+if(audio){
+  audio.addEventListener("loadeddata", setAudioData);
+}
+    // audio.addEventListener("loadeddata", setAudioData);
+if(audio){
+   audio.addEventListener("timeupdate", setAudioTime);
+}
     playing ? audio.play() : audio.pause();
 
     if (clickedTime && clickedTime !== curTime) {
